@@ -1,0 +1,20 @@
+# OSINT & Recon API Endpoints
+# Format: category|name|method|url|headers|body_template|auth_param|validation
+
+instagram|profile|GET|https://api.instagram.com/v1/users/{username}/info?__a=1&d={hash}|User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15||username|Check for response.data.user
+
+snapchat|profile|GET|https://www.snapchat.com/add/{username}|User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15||username|Check for snap data
+
+telegram|user|GET|https://api.telegram.org/bot{token}/getChat?chat_id={username}||token|Check for ok: true
+
+youtube|channel|GET|https://www.googleapis.com/youtube/v3/search?part=snippet&q={username}&type=channel&key={api_key}||api_key|Check for items
+
+ip|lookup|GET|https://ipinfo.io/{ip}/json||||ip|Check for ip field
+
+email|validate|GET|https://emailrep.io/{email}||||email|Check for reputation
+
+phone|validate|GET|https://numverify.com/api/validate?number={number}&access_key={api_key}||api_key|Check for valid field
+
+github|user|GET|https://api.github.com/users/{username}||||username|Check for login field
+
+youtube|video|GET|https://www.googleapis.com/youtube/v3/videos?part=snippet&id={video_id}&key={api_key}||api_key|Check for items
