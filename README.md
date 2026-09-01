@@ -1,89 +1,153 @@
-# OpenCode Extension Pack
+# 🎯 OpenCode Extension Pack
 
-> Complete extension pack for OpenCode with custom agents, skills, tools, scripts, configurations, and wordlists. One command installation with backup, rollback, and verification.
+> **The Ultimate Hacking Extension Pack for OpenCode**
 
-## Features
+[![npm version](https://img.shields.io/npm/v/opencode-extension-pack)](https://www.npmjs.com/package/opencode-extension-pack)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-- **One-Click Install** - Single `npm install` command sets up everything
-- **Auto Backup** - Creates timestamped backups before every install/update
-- **Rollback** - Restore to any previous version instantly
-- **Verification** - Check installation integrity against manifest
-- **CLI Manager** - Full command-line interface for managing the pack
-- **Cross-Platform** - Works on Termux, Linux, macOS
+---
 
-## What's Included
+## 📦 What's Included
 
-| Directory | Files | Description |
+| Component | Files | Description |
 |-----------|-------|-------------|
-| `.agents/` | Custom agent definitions, skills, and plugin configurations |
-| `.config/` | OpenCode configurations, node modules, and settings |
-| `anthropic-skills/` | All system prompts (Claude Fable 5, Opus 5, Opus 4.x, etc.) |
-| `github-tools/` | GitHub integration and automation tools |
-| `scripts/` | Custom automation scripts (monster-attack, auto-recon, etc.) |
-| `tools/` | Hacking tools collection (nmap, sqlmap, XSStrike, nuclei, etc.) |
-| `tools-v2/` | Advanced tools v2 (APIs, encoding, web security, payloads) |
-| `wordlists/` | Password and directory wordlists for brute forcing |
+| **System Prompts** | 18+ | Full claude-fable-5.md, opus variants, cowork, design, science |
+| **Hacking Skills** | 8 | hack, recon, web-attack, brute, exploit, report, master, chat |
+| **Scripts** | 20+ | auto-recon, auto-attack, auto-report, monster-attack, self-heal |
+| **OSINT APIs** | 56+ | Instagram, Snapchat, Telegram, YouTube, IP, Email, Phone |
+| **Wordlists** | 3 | common.txt, web-common.txt, directory-list-medium.txt |
+| **Hacking Tools** | 19 | XSStrike, commix, nuclei, sherlock, maigret, strix, etc. |
+| **GitHub Tools** | 43 | Full GitHub MCP Server integration |
+| **Tools v2** | 15 | Attack prompts, encoding, network, web, payload, report tools |
 
-## Requirements
+**Total: 4012 files, 414.18 MB**
 
-- **Node.js** >= 14.0.0
-- **npm** >= 6.0.0
-- **Git** (for cloning)
-- **Python** (for some tools)
-- **Termux** or **Linux** environment
+---
 
-## Installation
+## 🚀 Quick Start
 
+### Install via npm
 ```bash
-# Clone the repository
+npm install -g opencode-extension-pack
+```
+
+### Auto-Install (Recommended)
+After npm install, the pack automatically:
+1. Backs up existing skills
+2. Installs all components to `~/.config/opencode/`
+3. Creates `hacker.md` as the default chat agent
+4. Installs 56+ OSINT APIs
+
+### Manual Install
+```bash
 git clone https://github.com/dark-hacker-error/opencode-extension-pack.git
-
-# Navigate to directory
 cd opencode-extension-pack
-
-# Install globally
-npm install -g .
+bash install.sh
 ```
 
-## CLI Commands
+---
+
+## 🔧 CLI Commands
 
 ```bash
-opencode-pack install    # Install all files
-opencode-pack verify     # Verify installation
-opencode-pack backup     # Create backup
-opencode-pack rollback   # Restore from backup
-opencode-pack update     # Update to latest
-opencode-pack uninstall  # Remove all files
-opencode-pack status     # Show status
-opencode-pack help       # Show help
+opencode-pack install       # Full installation
+opencode-pack uninstall     # Clean removal
+opencode-pack backup        # Create backup
+opencode-pack restore       # Restore from backup
+opencode-pack verify        # Verify installation
+opencode-pack update        # Update to latest
+opencode-pack help          # Show help
 ```
 
-## Installation Paths
+---
 
-Files are installed to `~/.config/opencode/`:
+## 📁 Directory Structure
 
 ```
-~/.config/opencode/
-├── .agents/
-├── .config/
-├── skills/          (from anthropic-skills)
-├── github-tools/
-├── scripts/
-├── tools/
-├── tools-v2/
-└── wordlists/
+extension-pack/
+├── .agents/           # Sub-agents
+├── .config/           # Configuration files
+├── anthropic-skills/  # System prompts (389K claude-fable-5.md)
+├── github-tools/      # GitHub MCP tools
+├── scripts/           # 20+ automation scripts
+├── tools/             # 19 hacking tools (115MB)
+├── tools-v2/          # Advanced utilities
+├── wordlists/         # Password & path lists
+└── package.json       # npm package
 ```
 
-## Backup & Rollback
+### Installation Mapping
+| Source | Destination |
+|--------|-------------|
+| `.agents/` | `~/.config/opencode/.agents/` |
+| `.config/` | `~/.config/opencode/.config/` |
+| `anthropic-skills/` | `~/.config/opencode/skills/` |
+| `github-tools/` | `~/.config/opencode/github-tools/` |
+| `scripts/` | `~/.config/opencode/scripts/` |
+| `tools/` | `~/.config/opencode/tools/` |
+| `tools-v2/` | `~/.config/opencode/tools-v2/` |
+| `wordlists/` | `~/.config/opencode/wordlists/` |
 
-```bash
-# List available backups
-ls ~/.config/opencode-backups/
+---
 
-# Restore from backup
-opencode-pack rollback
-```
+## 🛠️ Available Skills
 
-## License
+| Skill | Triggers | Purpose |
+|-------|----------|---------|
+| `hack` | hack, scan, attack, exploit | Hacking commands |
+| `recon` | recon, enumerate, scan | Reconnaissance |
+| `web-attack` | sql, xss, inject | Web app attacks |
+| `brute` | brute, crack, password | Brute force |
+| `exploit` | exploit, payload, shell | Exploitation |
+| `report` | report, summary, document | Report generation |
+| `master` | (auto) | Intent detection & routing |
+| `chat` | hello, hi, how are you | Normal conversation |
 
-MIT
+---
+
+## 📋 OSINT APIs (56+)
+
+| Category | API |
+|----------|-----|
+| Instagram | Profile, Posts, Stories |
+| Snapchat | Profile, Snap Map |
+| Telegram | User, Bot, Groups |
+| YouTube | Channel, Videos, Comments |
+| IP | Geolocation, Reverse DNS |
+| Email | Validation, Breach check |
+| Phone | Validation, Carrier |
+| GitHub | Users, Repos, Gists |
+
+---
+
+## 🔒 Security Notes
+
+- **Backup**: Always backup before installation
+- **Verify**: Run `opencode-pack verify` after install
+- **Restore**: Use `opencode-pack restore` if issues occur
+
+---
+
+## 📝 License
+
+MIT License - see [LICENSE](LICENSE) for details.
+
+---
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a Pull Request
+
+---
+
+## ⭐ Star History
+
+If this helps you, please star the repository!
+
+---
+
+**Made with ❤️ by dark-hacker-error**
