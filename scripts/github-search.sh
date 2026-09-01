@@ -1,17 +1,11 @@
 #!/bin/bash
-# GitHub Search Script - Search for tools on GitHub
-# Usage: ./github-search.sh <query>
+# GitHub Tool Search
+# Usage: bash github-search.sh <tool-name>
 
 if [ -z "$1" ]; then
-    echo "Usage: $0 <query>"
+    echo "Usage: bash github-search.sh <tool-name>"
     exit 1
 fi
 
-QUERY=$1
-echo "[*] Searching GitHub for: $QUERY"
-curl -s "https://api.github.com/search/repositories?q=$QUERY&sort=stars&order=desc&per_page=10" | python3 -c "
-import sys, json
-data = json.load(sys.stdin)
-for item in data.get('items', []):
-    print(f\"{item['full_name']} - {item['stargazers_count']} stars - {item['description']}\")
-"
+echo "[*] Searching GitHub for: $1"
+curl -s "https://api.github.com/search/repositories?q=$1&sort=stars&order=desc" | jq -r '.items[:5][] | "\(.full_name) - \(.description)\n\""

@@ -1,26 +1,12 @@
 #!/bin/bash
-# Test Hacker Script - Test system configuration
+# Test Hacker Script
+# Usage: bash test-hacker.sh
 
-echo "[*] Testing system configuration..."
-echo ""
+echo "[*] Testing hacker skill setup..."
+echo "[*] Checking tools..."
 
-# Check tools
-echo "[+] Checking tools..."
-for tool in nmap sqlmap hydra john hashcat nikto whatweb masscan; do
-    if command -v $tool &> /dev/null; then
-        echo "  [OK] $tool"
-    else
-        echo "  [MISSING] $tool"
-    fi
-done
+which nmap && echo "  [+] nmap installed" || echo "  [-] nmap not found"
+which sqlmap && echo "  [+] sqlmap installed" || echo "  [-] sqlmap not found"
+which nikto && echo "  [+] nikto installed" || echo "  [-] nikto not found"
 
-echo ""
-echo "[+] Checking wordlists..."
-if [ -f "/root/wordlists/common.txt" ]; then
-    echo "  [OK] common.txt"
-else
-    echo "  [MISSING] common.txt"
-fi
-
-echo ""
-echo "[+] System test complete"
+echo "[*] Test complete!"
