@@ -1,0 +1,39 @@
+{
+  "name": "opencode-extension-pack",
+  "version": "1.0.0",
+  "description": "Complete extension pack for OpenCode with custom agents, skills, tools, scripts, configurations, and wordlists",
+  "main": "postinstall.js",
+  "bin": {
+    "opencode-pack": "bin/opencode-pack.js"
+  },
+  "scripts": {
+    "postinstall": "node postinstall.js",
+    "preuninstall": "node uninstall.js",
+    "verify": "node verify-install.js",
+    "backup": "node backup.js",
+    "rollback": "node rollback.js",
+    "update": "node update.js"
+  },
+  "files": [
+    "bin/",
+    "lib/",
+    "manifest.json",
+    "postinstall.js",
+    "uninstall.js",
+    "verify-install.js",
+    "backup.js",
+    "rollback.js",
+    "update.js",
+    ".agents/",
+    ".config/",
+    "anthropic-skills/",
+    "github-tools/",
+    "scripts/",
+    "tools/",
+    "tools-v2/",
+    "wordlists/"
+  ],
+  "keywords": ["opencode", "extension", "hacking", "security", "tools"],
+  "author": "darkhackererror",
+  "license": "MIT"
+}
