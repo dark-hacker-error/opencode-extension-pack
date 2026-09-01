@@ -1,0 +1,1 @@
+/root/opencode-extension-pack/wordlists/web-common.txt
